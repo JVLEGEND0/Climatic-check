@@ -9,6 +9,9 @@ dados = info.json()
 if False: #apenas para desenvolvimento
      print(dados)
 
+if info.status_code == 404:
+     exit("Aconteceu algum problema, mas não é sua culpa ^-^")
+     
 try:
      error = True
      print("Erro:",dados['error']['code'])
@@ -20,9 +23,6 @@ except:
 
 if error:
      exit()
-
-if info.status_code != 200:
-     exit("Aconteceu algum problema, mas não é sua culpa ^-^")
 
 os.system('clear')
 print("RESULTADO:")
